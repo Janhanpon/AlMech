@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opensmoke version="0.1a">
+<reaction-number>
+24
+</reaction-number>
+<reaction-names>
+O+Al(S)=O(S)+Al(D)
+O2+2Al(S)=2O(S)+2Al(D)
+AlO+Al(S)=AlO(S)+Al(D)
+Al(S)+AlO(S)=O(S)+Al(S)+Al(D)
+O+Al(S)=AlO(S)
+Al2O+3Al(S)=Al2O(S)+3Al(D)
+Al+2Al(S)+AlO(S)=Al2O(S)+2Al(D)
+AlO+3Al(S)=Al2O(S)+2Al(D)
+2Al(S)+AlO(S)=Al2O(S)+Al(D)
+O+3Al(S)=Al2O(S)+Al(D)
+AlO2+Al(S)=AlO2(S)+Al(D)
+Al+2O(S)+Al(D)=Al(S)+AlO2(S)
+AlO+O(S)=AlO2(S)
+Al2O2+3Al(S)=Al2O2(S)+3Al(D)
+AlO2+3Al(S)=Al2O2(S)+2Al(D)
+AlO+2Al(S)+AlO(S)=Al2O2(S)+2Al(D)
+Al2O+O(S)+2Al(S)=Al2O2(S)+2Al(D)
+O+Al2O(S)=Al2O2(S)
+Al2O3=>Al2O3(D)
+AlO2+AlO(S)+Al(D)=>Al(S)+Al2O3(D)
+AlO+AlO2(S)+Al(D)=>Al(S)+Al2O3(D)
+O+Al2O2(S)+3Al(D)=>3Al(S)+Al2O3(D)
+O(S)+2AlO(S)+3Al(D)=>3Al(S)+Al2O3(D)
+3O(S)+2Al(S)+5Al(D)=>5Al(S)+Al2O3(D)
+</reaction-names>
+</opensmoke>

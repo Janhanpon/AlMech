@@ -1,0 +1,310 @@
+***************************************************************************
+
+!Starik, A.M., Kuleshov, P.S., Sharipov, A.S. and Titova, N.S., 2014. 
+
+!Kinetics of ignition and combustion in the Al-CH4-O2 system. 
+
+!Energy & !fuels, 28(10), pp.6579-6588.
+
+!****************************************************************************
+
+
+
+ELEMENTS
+
+C
+
+O 
+
+H 
+
+Al 
+
+Ar  
+
+N
+
+
+
+END
+
+
+
+SPECIES
+
+!H	H2
+
+O	O2
+
+C	CO	CO2	  
+
+!OH	HO2	H2O	H2O2	 
+
+Al	AlO	AlO2
+
+!Al2		
+
+Al2O	Al2O2	Al2O3 
+
+!AlH	AlH2	AlH3	
+
+!AlOH	Al(OH)2 Al(OH)3 AlO2H
+
+!AlCO2	Al2CO2	Al2CO3	Al2CO4
+
+Al2O3L	!Al(l)
+
+N2
+
+Ar
+
+END
+
+
+
+REACTIONS CAL/MOLE MOLE
+!  --------------------------------------------------------
+
+!  -------------------- Al1-O mechanism -------------------
+
+!  --------------------------------------------------------
+
+!Al  = Al(l)				1.0E14		0.			0.			!!!J. Glorian, et al. CNF, 2016.
+
+!Al + O = AlO				3.475E+13	3.242E-01	0.000E+00	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!Al + O = AlO + O			1E13		0.			1589.60  
+
+Al + O + M = AlO + M			3.0E17		-1.0		0.
+O2/1.1/
+
+!H2/2.8/ H2O/1.9/ CO2/4.3/ CO/2.1/
+
+Al + O2 = AlO + O			9.720E+13	0		159.97          !!!J. Glorian, et al. CNF, 2016.
+
+AlO + O2 = AlO2 + O			4.62E14		0.		19885.90 	!!!J. Glorian, et al. CNF, 2016.
+
+AlO2 = AlO + O				1.0E15 		0.		88557.88	!!!J. Glorian, et al. CNF, 2016.
+
+!Al + O2 = AlO2				7.855E+02	1.768E+00	6.932E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+!
+!Al + O2 = AlO + O			5.990E+13	2.409E-01	0.000E+00	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+!
+!!AlO + O = AlO2				9.517E+01	1.715E+00	6.385E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+!
+!AlO + O2 = AlO2 + O			1.274E+10	1.100E+00	2.494E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!AlO + O2 = AlO2 + O			4.62E14		0.			19885.90
+
+
+!  --------------------------------------------------------
+
+!  -------------------- Al2  mechanism --------------------
+
+!  --------------------------------------------------------
+
+Al2O3 = Al2O2 + O			3.0E15	0. 	97649.99 
+
+Al2O3 = AlO2 + AlO			3.0E15 	0. 	126999.89
+
+! AlO + AlO2 = Al2O3			2.770E+07	1.611E-01	1.368E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+Al2O2 = AlO + AlO			1.0E15 	0. 	117939.78	!!!J. Glorian, et al. CNF, 2016.
+
+Al2O2 = Al + AlO2			1.0E15 	0. 	148899.82	!!!J. Glorian, et al. CNF, 2016.
+
+Al2O2 = Al2O + O			1.0E15 	0.	104249.94	!!!J. Glorian, et al. CNF, 2016.
+
+Al2O = AlO + Al				1.0E15 	0.	133199.94	!!!J. Glorian, et al. CNF, 2016. !!!!!!!alternative
+
+Al2O3 => Al2O3L				1.0E14 	0.	0.		!!!J. Glorian, et al. CNF, 2016.
+
+
+! --------------------------------------------------------
+
+! -------------------- Al1-O-C mechanism -----------------
+
+! --------------------------------------------------------
+
+!!Al	+ CO2 = AlCO2				3.013E+25	-4.428E+00  	3.684E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!Al	 + CO2 = AlO + CO			1.253E+08  	2.061E+00  	6.121E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+Al	 + CO2 = AlO + CO			1.740E+14  	0		6.400E+03	!!!Julien, et al. CNF, 2021.
+
+AlO	 + CO2 = AlO2 + CO			1.500E+10  	0		-794.8   	!!!Julien, et al. CNF, 2021.
+
+!Al + CO2 = AlO + CO				7.31E+12	0.5		14842.89		!!!A. S. Sharipov, et al. Combustion Theory and Modelling, 2012.
+
+!!AlO + CO = AlCO2				1.871E+18 	-3.248E+00  	1.066E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!AlO + CO2 = AlO2 + CO				2.51E-14	0.		-795.889		!!!Mathieu Muller, Doctoral Thesis.High reaction barrier
+
+!!AlO + CO2 = AlO2 + CO				7.15E+12	0.5		30997.20		!!!A. M. Starik, et al. Energy&Fuel, 2014.
+
+
+
+! --------------------------------------------------------
+
+! -------------------- Al2-O-C mechanism -----------------
+
+! --------------------------------------------------------
+
+!!Al2O  + CO    = Al2CO2		1.452E+27	-6.579E+00	4.310E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al + AlCO2 = Al2CO2		2.143E+23 	-5.238E+00	1.202E+05	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!DUPLICATE
+
+!!Al2O  + CO    = Al + AlCO2	2.296E+10  	8.004E-01	1.088E+05	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al + AlCO2 = Al2CO2		2.823E+27 	-4.516E+00	3.247E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!DUPLICATE
+
+!!Al2O  + CO2   = Al2CO3		5.564E+36 	-8.107E+00	3.046E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O2 + CO    = Al2CO3		7.481E+15	-3.686E+00	4.808E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!AlO   + AlCO2 = Al2CO3		3.622E+23	-5.608E+00	1.648E+05	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O  + CO2   = Al2O2 + CO	1.002E+04	2.419E+00  	4.174E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O  + CO2   = AlO + AlCO2	2.139E+10	1.375E+00	1.165E+05	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O2 + CO    = AlO + AlCO2	1.097E+05	2.160E+00	1.043E+05	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O2 + CO2   = Al2CO4		1.406E+26 	-4.629E+00	8.498E+03	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O3 + CO    = Al2CO4		1.043E+34	-9.734E+00	2.830E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+!!Al2O2 + CO2   = Al2O3 + CO	9.025E+03	2.679E+00	8.708E+04	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
+
+! --------------------------------------------------------
+
+! ---------------------- Al-H mechanism ------------------
+
+! --------------------------------------------------------
+
+!Al + H2O = AlO + H2             9.60E+13    0.00     5700.50
+!Al + H2O = H + AlOH             1.14E+12    0.00     879.8
+!
+!AlOH = AlO + H                  1.00E+15    0.00   114700.0
+!AlOH = Al + OH                  1.00E+15    0.00   132000.0
+!
+!Al + H + M = AlH + M            1.60E+17   -0.34     0.00
+!AlH + H = Al + H2               1.00E+13    0.00     0.00
+!AlH2 + H = AlH + H2             2.00E+13    0.00     0.00
+!AlH3 + H = AlH2 + H2            4.75E+09    1.50     0.00
+
+!  -------------------- C-H-O mechanism --------------------
+
+!***************************************************************************************
+
+!
+
+! Foundational Fuel Chemistry Model Version 2 (FFCM-2)
+
+!
+
+! - Description:
+
+!   FFCM-2: An optimized reaction model for combustion chemistry of species up to C4
+
+!
+
+! - Authors:
+
+!     Yue Zhang, Wendi Dong, Laurien A. Vandewalle, Rui Xu, Gregory P. Smith, Hai Wang
+
+!
+
+! - Date: 
+
+!     July 2023
+
+!
+
+! - Contact:
+
+!     Hai Wang: haiwang@stanford.edu
+
+!
+
+! - https://web.stanford.edu/group/haiwanglab/FFCM2/
+
+!
+
+! - How to cite:
+
+! 
+
+!   Y. Zhang, W. Dong, L. Vandewalle, R. Xu, G.P. Smith and H. Wang, Foundational Fuel Chemistry Model Version 2.0 (FFCM-2), https://web.stanford.edu/group/haiwanglab/FFCM2, 2023.
+
+!
+
+!  Bibtex
+
+!  @Misc{ZDV2023,
+
+!  author           = {Zhang, Yue and Dong, Wendi and Vandewalle, Laurien and Xu, Rui and Smith, Gregory and Wang, Hai},
+
+!  title            = {Foundational {Fuel} {Chemistry} {Model} {Version} 2.0 ({FFCM}-2)},
+
+!  year             = {2023},
+
+!  modificationdate = {2023-06-28T19:14:11},
+
+!  url              = {https://web.stanford.edu/group/haiwanglab/FFCM2/},
+
+!  }
+
+!
+
+!****************************************************************************************
+
+2O+M = O2+M                                         6.1600e+15  -0.500  0.00
+
+Ar/0.0/ CO/1.9/  CO2/3.8/  
+!H2/2.5/  H2O/12.0/
+
+2O+Ar = O2+Ar                                       1.8900e+13  0.000  -1788.00
+
+O2+CO=O+CO2		                             2.530E+12   0.000   47699.28
+
+CO2 = CO + O 					     9.000E+12   0.000   129699.4
+
+!CO+OH = CO2+H                                       6.7547e+04  2.050  -356.00
+!
+!DUPLICATE
+!
+!CO+OH = CO2+H                                       5.2148e+12  -0.660  332.00
+!
+!DUPLICATE
+!
+!CO+HO2 = CO2+OH                                     1.5700e+05  2.180  17944.00
+!
+!HCO+M = CO+H+M                                      5.3789e+17  -1.200  17734.00
+!
+!Ar/0.97/  CO/1.5/  CO2/2.0/  H2O/12.0/  HE/1.0/
+
+!H + O + M = OH + M              6.20E+16  -0.60     0.00
+!H + O2 = O + OH                 1.59E+17  -0.927  16876.52
+!H2 + O = OH + H                3.87E+04    2.70   6263.19
+!H2 + M = H + H + M             2.23E+14    0.00  96080.00
+!H2 + OH = H2O + H              2.16E+08    1.51   3442.39
+!OH + OH = H2O + O              2.10E+08    1.40   -396.84
+!H + O2 + M = HO2 + M           7.00E+17  -0.80     0.00
+!HO2 + H = H2 + O2              2.50E+13    0.00    693.13
+!HO2 + H = OH + OH              1.50E+14    0.00   1003.92
+!HO2 + H = H2O + O              5.00E+12    0.00   1410.10
+!HO2 + O = OH + O2              2.00E+13    0.00     0.00
+!HO2 + OH = H2O + O2            6.02E+13    0.00     0.00
+!HO2 + HO2 = H2O2 + O2          4.20E+14    0.00  11984.09
+!H2O2 + M = OH + OH + M         1.00E+17    0.00  45419.78
+!H2O2 + H = HO2 + H2            1.70E+12    0.00   3753.19
+!H2O2 + OH = H2O + HO2          7.00E+12    0.00   1434.15
+!H2O2 + O = HO2 + OH            2.80E+13    0.00   6406.47
+
+END
+

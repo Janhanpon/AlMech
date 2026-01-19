@@ -1,0 +1,210 @@
+!J. Glorian, S. Gallier, and L. Catoire, Combustion and Flame 168, 378 (2016).
+
+MATERIAL Al_chem_surf
+
+SITE/Al_site/ SDEN/4.42E-9/  !mole/cm^2 
+
+   O(S)/1/
+
+   Al(S)/1/
+
+   AlO(S)/1/
+
+   AlO2(S)/1/
+
+   Al2O(S)/3/
+
+   Al2O2(S)/3/
+
+!   OH(S)/2/
+!   
+!   H(S)/1/
+!
+!   H2O(S)/1/
+! 
+!   AlH(S)/1/ 
+
+   C(S)/1/
+
+   CO(S)/2/  
+
+   CO2(S)/2/
+
+END
+
+!BULK /Al_bulk/ 
+
+!Al(D)/2.375/ !g/cm^3--density of liquid Al at M.P.
+
+!Al2O3(D)/2.93/
+
+BULK/Al_bulk/
+
+   Al(D)/2.375/
+  
+BULK/Al2O3_bulk/
+
+   Al2O3(D)/2.93/
+
+!BULK/H_bulk/
+!
+!   H(D)/0.0000899/
+
+!BULK O(D) !!Dummy
+
+!BULK/Al4C3_bulk/
+!
+!   Al4C3(D)/2.36/
+
+!BULK/C_bulk/
+!
+!   C(D)/0.002267/
+
+END
+
+!!!!!----------Surface species----------!!!!!
+
+!THERMO
+
+!   300.000  1000.000  5000.000
+
+!END
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+REACTIONS  JOULES/MOLE !MWOFF
+!REACTIONS  CAL/MOLE !MWOFF       !!!it's interesting that the units used in Julien's thesis (cal/mol) and journal paper (J/mol) are different.
+!********AL-O**************!
+
+!Al + Al(S) = Al(D) + Al(S)				1.00E+00		0	0
+!STICK
+
+O + Al(S) = O(S) + Al(D)				1.00E+00		0	0
+STICK
+
+O2 + 2Al(S) = 2O(S) + 2Al(D)				5.00E-03		0	0
+STICK
+
+Al(S) + AlO = AlO(S) + Al(D)				1.00E+00		0	0
+STICK
+
+AlO(S) + Al(S) = Al(S) + O(S) + Al(D)			2.26E+19		0	11840
+
+Al(S) + O = AlO(S)					2.29E13			0	0
+
+Al2O + 3Al(S) = Al2O(S) + 3Al(D)			1.00E+00		0	0
+STICK
+
+AlO(S)+Al+2Al(S) = Al2O(S) + 2Al(D)			2.29E+13		0	0
+
+AlO + Al(S) + 2Al(S) = Al2O(S) + 2Al(D)			2.29E+13		0	0
+
+Al(S)+AlO(S) + Al(S) = Al2O(S) + Al(D)			2.26E+19		0	0
+
+2Al(S) + O + Al(S) = Al2O(S) + Al(D)			2.29E+13		0	0
+
+AlO2 + Al(S) = AlO2(S) + Al(D)				0.75E+00		0	0
+STICK
+
+2O(S)+Al+Al(D) = AlO2(S) + Al(S)			2.29E+13		0	0
+
+AlO + O(S) = AlO2(S)					2.29E+13		0	0
+
+Al2O2 + 3Al(S) = Al2O2(S) + 3Al(D)			0.75E+00		0	0
+STICK
+
+AlO2+Al(S) + 2Al(S) = Al2O2(S) + 2Al(D)			2.29E+13		0	0
+
+AlO(S)+AlO + 2Al(S) = Al2O2(S) + 2Al(D)			2.29E+13		0	0
+
+Al2O+O(S) + 2Al(S) = Al2O2(S) + 2Al(D)			2.29E+13		0	47094
+
+Al2O(S) + O = Al2O2(S)					2.29E+13		0	0
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Al2O3 => Al2O3(D)					1.00E+00		0	0 
+STICK
+
+AlO2+AlO(S)+Al(D)=> Al2O3(D) + Al(S)			2.29E+13		0	0 !originally <=>
+
+AlO2(S)+AlO+Al(D)=> Al2O3(D) + Al(S)			2.29E+13		0	0 !originally <=>
+
+Al2O2(S)+O+3Al(D)=> Al2O3(D) + 3Al(S)			2.29E+13		0	0 !originally <=>
+
+2AlO(S)+O(S)+3Al(D)=> Al2O3(D) + 3Al(S)	        	2.26E+19		0	0 !originally <=>
+
+3O(S)+2Al(S)+5Al(D)=> Al2O3(D) + 5Al(S)		        1.00E+48		0	0
+
+!O(S) + Al(D) = O(D) + Al(S)				1.00E+15		0	0
+
+!********AL-O-C**************!
+!C + Al(S) = C(S) + Al(D)				1.00E+00 		0 	0
+!STICK
+
+CO + 2Al(S) = CO(S) + 2Al(D)				0.84E+00 		0 	0
+STICK
+
+!CO(S) = C(S) + O(S)					2.26E+19		0 	113205
+
+!CO2 + 2Al(S) = CO2(S) + 2Al(D)				0.75E+00		0 	15767      !!!original, but fail in both OpenSMOKE and Chemkin due to its extraordinary reaction speed. 
+!STICK
+
+CO2 + 2Al(S) = CO2(S) + 2Al(D)				1.00E-01		0 	15767      !!!here we use the value of H2O to Al2O3. DOI: https://doi.org/10.1021/jp981070j
+STICK
+
+CO2(S) + Al(S) = CO(S) + O(S) + Al(D)			2.26E+19		0 	42689      !!!problematic
+
+!C(S) + O + Al(S) = CO(S) + Al(D)			2.29E+13		0 	29161
+
+CO(S) + O = CO2(S)					2.29E+13		0 	39340
+
+!3C(S) + 4Al(S) + 7Al(D) => Al4C3(D) + 7Al(S)		1.00E+62		0	0          !!! In case C(S) will cover all the surface
+!********AL-O-H**************!
+
+!!!H + Al(S) = H(S) + Al(D)				1.00E+00 		0 	0
+!!!STICK
+!!!
+!!!H2 + 2Al(S) = 2H(S) + 2Al(D)				5.00E-03		0	45607
+!!!STICK
+!!!
+!!!AlH + Al(S) = AlH(S) + Al(D)				1.00E+00		0 	0
+!!!STICK
+!!!
+!!!AlH(S) + Al(S) = Al(S) + H(S) + Al(D)			2.26E+19		0 	29563
+!!!
+!!!H2O(S) + 2Al(S) = H(S) + OH(S) + 2Al(D)	                2.26E+19		0 	36178
+!!!
+!!!OH + 2Al(S) = OH(S) + 2Al(D)				1.00E+00		0 	0
+!!!STICK 
+!!!
+!!!!H2O + Al(S) = H2O(S) + Al(D)				0.75E+00		0 	0
+!!!!STICK
+!!!
+!!!H2O + Al(S) = H2O(S) + Al(D)				1.00E-02		0 	0
+!!!STICK
+!!!
+!!!OH(S) = H(S) + O(S)					2.26E+19		0 	45010
+!!!
+!!!2OH(S) + 2Al(D) = H2O(S) + O(S) + 2Al(S)		2.26E+19		0 	55796
+!!!
+!!!O(S) + H + Al(S) = OH(S) + Al(D)			2.29E+13		0 	15009
+!!!
+!!!Al(S) + H = AlH(S)					2.29E+13		0 	0
+!!!
+!!!H + OH(S) + Al(D) = H2O(S) + Al(S)			2.29E+13		0 	13334
+!!!
+!!!H(S) + Al(D) = H(D) + Al(S)				1.00E+15		0	0
+
+!********AL-O-N**************!
+
+!N + Al(S) = N(S) + Al(D)				1.00E+00 		0	0
+
+!STICK
+
+!N2 + 2Al(S) = 2N(S) + 2Al(D)				1.44E+22		0	80521
+
+!AlN + Al(S) = AlN(S) + Al(D)				1.00E+00		0 	0
+
+!STICK
+
+END
