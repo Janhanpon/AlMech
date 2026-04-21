@@ -65,11 +65,11 @@ REACTIONS CAL/MOLE MOLE
 
 !  --------------------------------------------------------
 
-!Al  = Al(l)				1.0E14		0.			0.			!!!J. Glorian, et al. CNF, 2016.
+!Al  = Al(l)				1.0E14		0.		0.			!!!J. Glorian, et al. CNF, 2016.
 
 !Al + O = AlO				3.475E+13	3.242E-01	0.000E+00	!!!HPL:10^12atm, Masatoshi Saba, et al. CNF, 2021.
 
-!Al + O = AlO + O			1E13		0.			1589.60  
+Al + O = AlO     			1E13		0.		1589.60  
 
 Al + O + M = AlO + M			3.0E17		-1.0		0.
 O2/1.1/

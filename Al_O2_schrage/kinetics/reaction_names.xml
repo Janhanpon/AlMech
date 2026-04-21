@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <opensmoke version="0.1a">
 <reaction-number>
-13
+14
 </reaction-number>
 <reaction-names>
+O+Al=AlO
 O+Al+M=AlO+M
 O2+Al=O+AlO
 O2+AlO=O+AlO2
