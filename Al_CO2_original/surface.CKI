@@ -52,13 +52,13 @@ BULK/Al2O3_bulk/
 
 !BULK O(D) !!Dummy
 
-!BULK/Al4C3_bulk/
+BULK/Al4C3_bulk/
 
-!   Al4C3(D)/2.36/
+   Al4C3(D)/2.36/
 
-BULK/C_bulk/
+!BULK/C_bulk/
 
-   C(D)/0.002267/
+!   C(D)/0.002267/
 
 END
 
@@ -144,13 +144,11 @@ STICK
 CO + 2Al(S) = CO(S) + 2Al(D)				0.84E+00 		0 	0
 STICK
 
-CO(S) = C(S) + O(S)					2.26E+19		0 	113205
+!CO(S) = C(S) + O(S)					2.26E+19		0 	113205
+!CO(S) = C(S) + O(S)					2.26E+13		0 	113205
 
 CO2 + 2Al(S) = CO2(S) + 2Al(D)				0.75E+00		0 	15767      !!!original, but fail in both OpenSMOKE and Chemkin due to its extraordinary reaction speed. 
 STICK
-
-!CO2 + 2Al(S) = CO2(S) + 2Al(D)				1.00E-01		0 	15767      !!!here we use the value of H2O to Al2O3. DOI: https://doi.org/10.1021/jp981070j
-!STICK
 
 CO2(S) + Al(S) = CO(S) + O(S) + Al(D)			2.26E+19		0 	42689      !!!problematic
 
@@ -158,9 +156,8 @@ C(S) + O + Al(S) = CO(S) + Al(D)			2.29E+13		0 	29161
 
 CO(S) + O = CO2(S)					2.29E+13		0 	39340
 
-!3C(S) + 4Al(S) + 7Al(D) => Al4C3(D) + 7Al(S)		1.00E+62		0	0          !!! In case C(S) will cover all the surface
+3C(S) + 4Al(S) + 7Al(D) => Al4C3(D) + 7Al(S)		1.00E+62		0	0          !!! In case C(S) will cover all the surface
 
-C(S) + Al(D) = C(D) + Al(S)                             1.00E+15                0       0
 !********AL-O-H**************!
 
 !!!H + Al(S) = H(S) + Al(D)				1.00E+00 		0 	0
