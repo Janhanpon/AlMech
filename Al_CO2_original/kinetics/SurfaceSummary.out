@@ -240,45 +240,33 @@
          site species: Al(S)	1.000000e+00
 
 
-     26. CO + 2Al(S)  => CO(S) + 2Al(D) 
+     26. CO + 2Al(S)  = CO(S) + 2Al(D) 
          k:       8.400000e-01	    0.00          0.00
          Coefficients are sticking parameters...
          The Motz-Wise correction is turned off
          site species: Al(S)	2.000000e+00
 
 
-     27. CO(S) + 2Al(D)  => CO + 2Al(S) 
-         k:       1.000000e+21	    0.00       4078.21
-
-
-     28. CO2 + 2Al(S)  => CO2(S) + 2Al(D) 
-         k:       5.000000e-03	    0.00          0.00
+     27. CO2 + 2Al(S)  = CO2(S) + 2Al(D) 
+         k:       7.500000e-01	    0.00       3768.02
          Coefficients are sticking parameters...
          The Motz-Wise correction is turned off
          site species: Al(S)	2.000000e+00
 
 
-     29. CO2(S) + 2Al(D)  => CO2 + 2Al(S) 
-         k:       1.000000e+21	    0.00       2976.03
-
-
-     30. O(S) + C(S)  = CO(S) 
-         k:       3.530000e+20	    0.05      14808.23
-
-
-     31. Al(S) + CO2(S)  = O(S) + CO(S) + Al(D) 
+     28. Al(S) + CO2(S)  = O(S) + CO(S) + Al(D) 
          k:       2.260000e+18	    0.00      10201.87
 
 
-     32. O + Al(S) + C(S)  = CO(S) + Al(D) 
+     29. O + Al(S) + C(S)  = CO(S) + Al(D) 
          k:       2.290000e+09	    0.00       6968.93
 
 
-     33. O + CO(S)  = CO2(S) 
+     30. O + CO(S)  = CO2(S) 
          k:       2.290000e+10	    0.00       9401.52
 
 
-     34. 4Al(S) + 3C(S) + 7Al(D)  => 7Al(S) + Al4C3(D) 
+     31. 4Al(S) + 3C(S) + 7Al(D)  => 7Al(S) + Al4C3(D) 
          k:       1.000000e+56	    0.00          0.00
 
 

@@ -177,11 +177,11 @@ H2O(S) + 2Al(S) = H(S) + OH(S) + 2Al(D)	                2.26E+19		0 	36178
 OH + 2Al(S) = OH(S) + 2Al(D)				1.00E+00		0 	0
 STICK 
 
-!H2O + Al(S) = H2O(S) + Al(D)				0.75E+00		0 	0
-!STICK
-
-H2O + Al(S) = H2O(S) + Al(D)				1.00E-02		0 	0
+H2O + Al(S) = H2O(S) + Al(D)				0.75E+00		0 	0
 STICK
+
+!H2O + Al(S) = H2O(S) + Al(D)				1.00E-02		0 	0
+!STICK
 
 OH(S) = H(S) + O(S)					2.26E+19		0 	45010
 

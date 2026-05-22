@@ -287,7 +287,7 @@
 
 
      31. H2O + Al(S)  = H2O(S) + Al(D) 
-         k:       1.000000e-02	    0.00          0.00
+         k:       7.500000e-01	    0.00          0.00
          Coefficients are sticking parameters...
          The Motz-Wise correction is turned off
          site species: Al(S)	1.000000e+00
