@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <opensmoke version="0.1a">
 <reaction-number>
-31
+34
 </reaction-number>
 <reaction-names>
 O+Al(S)=O(S)+Al(D)
@@ -29,8 +29,11 @@ O+Al2O2(S)+3Al(D)=>3Al(S)+Al2O3(D)
 O(S)+2AlO(S)+3Al(D)=>3Al(S)+Al2O3(D)
 3O(S)+2Al(S)+5Al(D)=>5Al(S)+Al2O3(D)
 C+Al(S)=C(S)+Al(D)
-CO+2Al(S)=CO(S)+2Al(D)
-CO2+2Al(S)=CO2(S)+2Al(D)
+CO+2Al(S)=>CO(S)+2Al(D)
+CO(S)+2Al(D)=>CO+2Al(S)
+CO2+2Al(S)=>CO2(S)+2Al(D)
+CO2(S)+2Al(D)=>CO2+2Al(S)
+O(S)+C(S)=CO(S)
 Al(S)+CO2(S)=O(S)+CO(S)+Al(D)
 O+Al(S)+C(S)=CO(S)+Al(D)
 O+CO(S)=CO2(S)
