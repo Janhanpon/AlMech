@@ -166,26 +166,29 @@ STICK
 
 H2 + 2Al(S) = 2H(S) + 2Al(D)				5.00E-03		0	45607
 STICK
+!2H(S) + 2Al(D) = H2 + 2Al(S)                            6.67E+20                0.21    40296 
 
 AlH + Al(S) = AlH(S) + Al(D)				1.00E+00		0 	0
 STICK
 
 AlH(S) + Al(S) = Al(S) + H(S) + Al(D)			2.26E+19		0 	29563
 
+!H2O + Al(S) = H2O(S) + Al(D)				0.75E+00		0 	0
+!STICK
+H2O + Al(S) = H2O(S) + Al(D)				5.00E-02		0 	0
+STICK
+
 H2O(S) + 2Al(S) = H(S) + OH(S) + 2Al(D)	                2.26E+19		0 	36178
+!H(S) + OH(S) + 2Al(D) = H2O(S) + 2Al(S)			1.58E+21       		0.15    82039 
 
 OH + 2Al(S) = OH(S) + 2Al(D)				1.00E+00		0 	0
 STICK 
 
-H2O + Al(S) = H2O(S) + Al(D)				0.75E+00		0 	0
-STICK
-
-!H2O + Al(S) = H2O(S) + Al(D)				1.00E-02		0 	0
-!STICK
-
 OH(S) = H(S) + O(S)					2.26E+19		0 	45010
+!H(S) + O(S) = OH(S) 			                8.21E+20                0.16    151908
 
 2OH(S) + 2Al(D) = H2O(S) + O(S) + 2Al(S)		2.26E+19		0 	55796
+!2OH(S) + 2Al(D) = H2O(S) + O(S) + 2Al(S)                4.71E+18       		1.00      962 
 
 O(S) + H + Al(S) = OH(S) + Al(D)			2.29E+13		0 	15009
 

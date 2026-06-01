@@ -275,22 +275,22 @@
          k:       2.260000e+18	    0.00       7065.00
 
 
-     29. 2Al(S) + H2O(S)  = OH(S) + H(S) + 2Al(D) 
+     29. H2O + Al(S)  = H2O(S) + Al(D) 
+         k:       5.000000e-02	    0.00          0.00
+         Coefficients are sticking parameters...
+         The Motz-Wise correction is turned off
+         site species: Al(S)	1.000000e+00
+
+
+     30. 2Al(S) + H2O(S)  = OH(S) + H(S) + 2Al(D) 
          k:       2.260000e+17	    0.00       8645.86
 
 
-     30. OH + 2Al(S)  = OH(S) + 2Al(D) 
+     31. OH + 2Al(S)  = OH(S) + 2Al(D) 
          k:       1.000000e+00	    0.00          0.00
          Coefficients are sticking parameters...
          The Motz-Wise correction is turned off
          site species: Al(S)	2.000000e+00
-
-
-     31. H2O + Al(S)  = H2O(S) + Al(D) 
-         k:       7.500000e-01	    0.00          0.00
-         Coefficients are sticking parameters...
-         The Motz-Wise correction is turned off
-         site species: Al(S)	1.000000e+00
 
 
      32. OH(S)  = O(S) + H(S) 
