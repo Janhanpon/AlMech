@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opensmoke version="0.1a">
+<reaction-number>
+27
+</reaction-number>
+<reaction-names>
+O+Al=AlO
+O+Al+M=AlO+M
+O2+Al=O+AlO
+O2+AlO=O+AlO2
+AlO2=O+AlO
+Al2O3=O+Al2O2
+Al2O3=AlO+AlO2
+Al2O2=2AlO
+Al2O2=Al+AlO2
+Al2O2=O+Al2O
+Al2O=Al+AlO
+Al2O3=>Al2O3L
+2O+M=O2+M
+2O+Ar=O2+Ar
+O2+N=O+NO
+N+NO=O+N2
+O+NO(+M)=NO2(+M)
+O+NO2=O2+NO
+2NO2=O2+2NO
+2NO2=NO+NO3
+O+NO2(+M)=NO3(+M)
+O+NO3=O2+NO2
+NO2+NO3=O2+NO+NO2
+N2O(+M)=O+N2(+M)
+O+N2O=2NO
+O+N2O=O2+N2
+NO+N2O=N2+NO2
+</reaction-names>
+</opensmoke>
