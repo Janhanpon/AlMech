@@ -1,0 +1,44 @@
+MATERIAL Al_chem_surf
+
+SITE/Al_site/ SDEN/4.42E-9/  !mole/cm^2 
+
+!   B(S)/1/
+
+   NC7H16(S)/1/
+
+   C7H16(S)/1/
+
+!   C(S)/1/
+
+END
+
+BULK/Al_bulk/
+
+!   A(D)/2.375/
+
+   NC7H16(D)/2.375/ 
+
+END
+
+!!!!!----------Surface species----------!!!!!
+
+!THERMO
+
+!   300.000  1000.000  5000.000
+
+!END
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+REACTIONS  JOULES/MOLE !MWOFF
+!REACTIONS  CAL/MOLE !MWOFF       !!!it's interesting that the units used in Julien's thesis (cal/mol) and journal paper (J/mol) are different.
+!********AL-O**************!
+
+!D + C(S) = A(D) + B(S)				1.00E+00		0	0
+!STICK
+
+!NC7H16 + C7H16(S) = NC7H16(D) + NC7H16(S)	1.00E+00		0	0
+!STICK
+
+
+END
